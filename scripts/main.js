@@ -148,6 +148,7 @@ Hooks.on('updateItem', async (weapon, update, options, userID) => {
 
     // delete the old entry to avoid duplicate spellcasting entries
     const { actor1 } = weapon;
+    console.log(actor1);
     const spellcastingEntries = actor1.items.filter(i => i.type === 'spellcastingEntry');
     const oldspellcastingEntry = spellcastingEntries.find(i => i.getFlag(moduleID, 'staveID') === weapon.id);
     if (oldspellcastingEntry) oldspellcastingEntry.delete();
@@ -180,6 +181,7 @@ Hooks.on('preDeleteItem', (weapon, options, userID) => {
     if (!isStave) return;
 
     const { actor } = weapon;
+    console.log(actor);
     const spellcastingEntries = actor.items.filter(i => i.type === 'spellcastingEntry');
     const spellcastingEntry = spellcastingEntries.find(i => i.getFlag(moduleID, 'staveID') === weapon.id);
     if (spellcastingEntry) spellcastingEntry.delete();
