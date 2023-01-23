@@ -93,6 +93,7 @@ Hooks.on('createItem', async (weapon, options, userID) => {
 // When stave updated on a character, also update corresponding spellcasting entry.
 
 Hooks.on('updateItem', async (weapon, update, options, userID) => {
+    Hooks.call('preDeleteItem', async)
     if (!weapon.actor) return;
     if (userID !== game.user.id) return;
 
@@ -148,6 +149,9 @@ Hooks.on('updateItem', async (weapon, update, options, userID) => {
     if (!spells.length) return;
 
     const { actor } = weapon;
+    const oldspellcastingEntry = spellcastingEntries.find(i => i.getFlag(moduleID, 'staveID') === weapon.id);
+    if (oldspellcastingEntry) oldspellcastingEntry.delete();
+
     const createData = {
         type: 'spellcastingEntry',
         name: weapon.name,
