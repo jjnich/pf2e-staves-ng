@@ -148,15 +148,15 @@ Hooks.on('updateItem', async (weapon, update, options, userID) => {
 
     if (!spells.length) return;
 
-    const { actor1 } = weapon;
-
     // delete the old entry to avoid duplicate spellcasting entries
+    /*
+    const { actor1 } = weapon;
     const spellcastingEntries = actor1.items.filter(i => i.type === 'spellcastingEntry');
     const oldspellcastingEntry = spellcastingEntries.find(i => i.getFlag(moduleID, 'staveID') === weapon.id);
     if (oldspellcastingEntry) oldspellcastingEntry.delete();
+    */
 
     const { actor } = weapon;
-
     const createData = {
         type: 'spellcastingEntry',
         name: weapon.name,
