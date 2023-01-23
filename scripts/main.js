@@ -92,7 +92,7 @@ Hooks.on('createItem', async (weapon, options, userID) => {
 
 // When stave updated on a character, also update corresponding spellcasting entry.
 
-Hooks.on('updateItem', async (weapon, options, userID) => {
+Hooks.on('updateItem', async (weapon, update, options, userID) => {
     if (!weapon.actor) return;
     if (userID !== game.user.id) return;
 
