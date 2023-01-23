@@ -43,6 +43,6 @@
     "languages": [],
     "flags": {},
     "url": "",
-    "manifest": "",
-    "download": ""
+    "manifest": "https://raw.githubusercontent.com/jjnich/pf2e-staves-ng/main/module.json",
+    "download": "https://raw.githubusercontent.com/jjnich/pf2e-staves-ng/main/module.zip"
 }
