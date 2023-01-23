@@ -148,7 +148,7 @@ Hooks.on('updateItem', async (weapon, update, options, userID) => {
 
     // delete the old entry to avoid duplicate spellcasting entries
     const { actor1 } = weapon;
-    console.log("update - actor: " + actor);
+    console.log("update - actor: " + actor1);
     const spellcastingEntries = actor1.items.filter(i => i.type === 'spellcastingEntry');
     const oldspellcastingEntry = spellcastingEntries.find(i => i.getFlag(moduleID, 'staveID') === weapon.id);
     if (oldspellcastingEntry) oldspellcastingEntry.delete();
