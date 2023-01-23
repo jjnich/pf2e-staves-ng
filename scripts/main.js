@@ -1,4 +1,4 @@
-export const moduleID = 'pf2e-staves';
+export const moduleID = 'pf2e-staves-ng';
 
 
 export const lg = x => console.log(x);
